@@ -4,6 +4,9 @@ quaternionクラスを作成しました。
 ただし、主要部分の実装がされていません。
 実装して、ユニットテストが通るようにしてください。
 
+[![Actions Status](https://github.com/tpu-game/quaternion_study/workflows/c-cpp/badge.svg)](https://github.com/tpu-game/quaternion_study/actions)
+（自分のリポジトリに合わせて編集してください）
+
 # 進め方
 * forkしてすすめてください。
 * 「src/libquat/quaternion.cpp」を書き換えてVisual Studioのテストが通るようにしてください。
