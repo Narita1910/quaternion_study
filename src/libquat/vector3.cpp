@@ -1,4 +1,4 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include <cmath>
 #include "../include/libquat.h"
 
@@ -15,7 +15,7 @@ vector3& vector3::normalize()
 {
 	float l = std::sqrt(dot(*this, *this));
 
-	if (l < 0.0000001f) return *this;// ƒ[ƒƒxƒNƒgƒ‹‚ÌÛ‚Í‚»‚Ì‚Ü‚Ü•Ô‚·
+	if (l < 0.0000001f) return *this;// ã‚¼ãƒ­ãƒ™ã‚¯ãƒˆãƒ«ã®éš›ã¯ãã®ã¾ã¾è¿”ã™
 
 	v_[0] /= l;
 	v_[1] /= l;

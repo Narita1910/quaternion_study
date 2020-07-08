@@ -1,4 +1,4 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "CppUnitTest.h"
 #include "../include/libquat.h"
 
@@ -14,20 +14,20 @@ namespace UnitTest
 
 	public:
 		
-		TEST_METHOD(TestIdentity)// ‚Ü‚¸‚ÍA“®‚­‚©‚Ç‚¤‚©
+		TEST_METHOD(TestIdentity)// ã¾ãšã¯ã€å‹•ãã‹ã©ã†ã‹
 		{
 			quaternion q;
 			q.identity();
 
-			Assert::AreEqual(0.0f, q.x(), 0.0001f, L"x");// Šú‘Ò’lAÀÛ‚Ì’lAŒë·AƒRƒƒ“ƒg
+			Assert::AreEqual(0.0f, q.x(), 0.0001f, L"x");// æœŸå¾…å€¤ã€å®Ÿéš›ã®å€¤ã€èª¤å·®ã€ã‚³ãƒ¡ãƒ³ãƒˆ
 			Assert::AreEqual(0.0f, q.y(), 0.0001f, L"y");
 			Assert::AreEqual(0.0f, q.z(), 0.0001f, L"z");
 			Assert::AreEqual(1.0f, q.w(), 0.0001f, L"w");
 		}
 
-		TEST_METHOD(TestNormalize) // ’·‚³‚ğ1‚É‚Å‚«‚é‚©
+		TEST_METHOD(TestNormalize) // é•·ã•ã‚’1ã«ã§ãã‚‹ã‹
 		{
-			quaternion q(1.0f, 2.0f, 2.0f, 4.0f);// ’·‚³‚Ísqrt(1+4+4+16)=sqrt(25)=5
+			quaternion q(1.0f, 2.0f, 2.0f, 4.0f);// é•·ã•ã¯sqrt(1+4+4+16)=sqrt(25)=5
 			q.normalize();
 
 			Assert::AreEqual(1.0f / 5.0f, q.x(), 0.0001f, L"x");
@@ -36,9 +36,9 @@ namespace UnitTest
 			Assert::AreEqual(4.0f / 5.0f, q.w(), 0.0001f, L"w");
 		}
 
-		TEST_METHOD(TestInverse) // ‹tŒ³‚ªì‚ê‚é‚©?
+		TEST_METHOD(TestInverse) // é€†å…ƒãŒä½œã‚Œã‚‹ã‹?
 		{
-			// ³‹K‰»‚³‚ê‚½ quaternion ‚Ì‹tŒ³‚Í‹¤–ğ
+			// æ­£è¦åŒ–ã•ã‚ŒãŸ quaternion ã®é€†å…ƒã¯å…±å½¹
 			vector3 axis(1.0f, 2.0f, 3.0f);
 			quaternion q(axis.normalize(), .1f * PI);
 			quaternion c = q.inverse();
@@ -49,10 +49,10 @@ namespace UnitTest
 			Assert::AreEqual(+q.w(), c.w(), 0.0001f, L"w");
 		}
 
-		TEST_METHOD(TestApply)// ƒxƒNƒgƒ‹‚ğƒ`ƒLƒ“‚Æ‰ñ“]‚Å‚«‚é‚©?
+		TEST_METHOD(TestApply)// ãƒ™ã‚¯ãƒˆãƒ«ã‚’ãƒã‚­ãƒ³ã¨å›è»¢ã§ãã‚‹ã‹?
 		{
 			vector3 axis(1.0f, 1.0f, 1.0f);
-			quaternion q(axis.normalize(), 2.0f * PI / 3.0f);// (1,1,1)‚ğ²‚Æ‚µ‚Ä1/3‰ñ“]
+			quaternion q(axis.normalize(), 2.0f * PI / 3.0f);// (1,1,1)ã‚’è»¸ã¨ã—ã¦1/3å›è»¢
 
 			vector3 x2(2.0f, 0.0f, 0.0f);
 			vector3 y2 = q * x2;
@@ -66,14 +66,14 @@ namespace UnitTest
 			Assert::AreEqual(2.0f, z2.z(), 0.0001f, L"z-z");
 		}
 
-		TEST_METHOD(TestSlerp) // ‹…–ÊüŒ`•âŠÔ‚ÌŒŸØ
+		TEST_METHOD(TestSlerp) // çƒé¢ç·šå½¢è£œé–“ã®æ¤œè¨¼
 		{
-			quaternion q0(vector3(1.0f, 0.0f, 0.0f), 0.5f * PI);// x²ü‚è‚Ì90“x‰ñ“]
-			quaternion q1(vector3(0.0f, 1.0f, 0.0f), 0.5f * PI);// y²ü‚è‚Ì90“x‰ñ“]
-			float t = 0.5f;// ^‚ñ’†
+			quaternion q0(vector3(1.0f, 0.0f, 0.0f), 0.5f * PI);// xè»¸å‘¨ã‚Šã®90åº¦å›è»¢
+			quaternion q1(vector3(0.0f, 1.0f, 0.0f), 0.5f * PI);// yè»¸å‘¨ã‚Šã®90åº¦å›è»¢
+			float t = 0.5f;// çœŸã‚“ä¸­
 			quaternion qt = quaternion::slerp(q0, q1, t);
 
-			// ¶¬‚µ‚½ƒNƒI[ƒ^ƒjƒIƒ“‚Å•ÏŠ·
+			// ç”Ÿæˆã—ãŸã‚¯ã‚ªãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã§å¤‰æ›
 			vector3 z1(0.0f, 0.0f, 1.0f);
 			vector3 v = qt * z1;
 
@@ -82,13 +82,13 @@ namespace UnitTest
 			Assert::AreEqual(+0.3333f, v.z(), 0.0001f, L"z");
 		}
 
-		TEST_METHOD(TestSlerpParallel) // “¯‚¶quaternion‚ÅSlerp‚µ‚Ä‚à‚«‚¿‚ñ‚Æ“®‚­‚©?
+		TEST_METHOD(TestSlerpParallel) // åŒã˜quaternionã§Slerpã—ã¦ã‚‚ãã¡ã‚“ã¨å‹•ãã‹?
 		{
-			quaternion q0(vector3(1.0f, 0.0f, 0.0f), 1.0f * PI);// x²ü‚è‚Ì180“x‰ñ“]
-			float t = 0.5f;// ^‚ñ’†
+			quaternion q0(vector3(1.0f, 0.0f, 0.0f), 1.0f * PI);// xè»¸å‘¨ã‚Šã®180åº¦å›è»¢
+			float t = 0.5f;// çœŸã‚“ä¸­
 			quaternion qt = quaternion::slerp(q0, q0, t);
 
-			// ¶¬‚µ‚½ƒNƒI[ƒ^ƒjƒIƒ“‚Å•ÏŠ·
+			// ç”Ÿæˆã—ãŸã‚¯ã‚ªãƒ¼ã‚¿ãƒ‹ã‚ªãƒ³ã§å¤‰æ›
 			vector3 z1(0.0f, 0.0f, 1.0f);
 			vector3 v = qt * z1;
 

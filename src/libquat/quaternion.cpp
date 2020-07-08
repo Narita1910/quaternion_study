@@ -1,24 +1,24 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include <cmath>
 #include "../include/libquat.h"
 
-// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 quaternion::quaternion()
 {
-	// todo: À‘•‚µ‚Ä‰º‚³‚¢
+	// todo: å®Ÿè£…ã—ã¦ä¸‹ã•ã„
 }
 
 quaternion::quaternion(float x, float y, float z, float w)
 {
-	// todo: À‘•‚µ‚Ä‰º‚³‚¢
+	// todo: å®Ÿè£…ã—ã¦ä¸‹ã•ã„
 }
 
 quaternion::quaternion(const vector3 &v, float arg)
 {
-	// todo: À‘•‚µ‚Ä‰º‚³‚¢
+	// todo: å®Ÿè£…ã—ã¦ä¸‹ã•ã„
 }
 
-// ƒfƒXƒgƒ‰ƒNƒ^
+// ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 quaternion::~quaternion()
 {
 }
@@ -35,13 +35,13 @@ quaternion quaternion::operator/(float f) const
 
 vector3 quaternion::operator*(const vector3& v) const
 {
-	// todo: À‘•‚µ‚Ä‰º‚³‚¢
+	// todo: å®Ÿè£…ã—ã¦ä¸‹ã•ã„
 	return vector3();
 }
 
 quaternion quaternion::operator*(const quaternion& rhs) const
 {
-	// todo: À‘•‚µ‚Ä‰º‚³‚¢
+	// todo: å®Ÿè£…ã—ã¦ä¸‹ã•ã„
 	return quaternion();
 }
 
@@ -51,44 +51,44 @@ quaternion quaternion::operator+(const quaternion& rhs) const
 }
 
 
-// ’PˆÊŒ³‚É‚·‚é
+// å˜ä½å…ƒã«ã™ã‚‹
 quaternion &quaternion::identity()
 {
-	// todo: À‘•‚µ‚Ä‰º‚³‚¢
+	// todo: å®Ÿè£…ã—ã¦ä¸‹ã•ã„
 	return *this;
 }
 
-// ³‹K‰»‚·‚é
+// æ­£è¦åŒ–ã™ã‚‹
 quaternion &quaternion::normalize()
 {
-	// todo: À‘•‚µ‚Ä‰º‚³‚¢
+	// todo: å®Ÿè£…ã—ã¦ä¸‹ã•ã„
 	return *this;
 }
 
-// ‘å‚«‚³‚Ì2æ
+// å¤§ãã•ã®2ä¹—
 float quaternion::length_sq() const
 {
 	return x_ * x_ + y_ * y_ + z_ * z_ + w_ * w_;
 }
 
-// ‹¤–ğ‚ğ•Ô‚·
+// å…±å½¹ã‚’è¿”ã™
 quaternion quaternion::conjugate() const
 {
-	// todo: À‘•‚µ‚Ä‰º‚³‚¢
+	// todo: å®Ÿè£…ã—ã¦ä¸‹ã•ã„
 	return quaternion();
 }
 
-// ‹tŒ³‚ğ•Ô‚·
+// é€†å…ƒã‚’è¿”ã™
 quaternion quaternion::inverse() const
 {
-	// todo: À‘•‚µ‚Ä‰º‚³‚¢
+	// todo: å®Ÿè£…ã—ã¦ä¸‹ã•ã„
 	return quaternion();
 }
 
-// ‹…–ÊüŒ`•âŠÔ
+// çƒé¢ç·šå½¢è£œé–“
 quaternion quaternion::slerp(const quaternion& q0, const quaternion& q1, float t)
 {
-	// todo: À‘•‚µ‚Ä‰º‚³‚¢
+	// todo: å®Ÿè£…ã—ã¦ä¸‹ã•ã„
 	return quaternion();
 }
 

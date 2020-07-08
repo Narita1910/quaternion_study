@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 
 class vector3
 {
@@ -30,33 +30,33 @@ private:
 
 	quaternion operator + (const quaternion& rhs) const;
 
-	float length_sq() const; // ‘å‚«‚³‚Ì2æ
-	quaternion conjugate() const;// ‹¤–ğ‚ğ•Ô‚·
+	float length_sq() const; // å¤§ãã•ã®2ä¹—
+	quaternion conjugate() const;// å…±å½¹ã‚’è¿”ã™
 public:
 	quaternion();
 	quaternion(float x, float y, float z, float w);
 	quaternion(const vector3 &v, float arg);
 	~quaternion();
 
-	// —v‘f‚Ìæ“¾
+	// è¦ç´ ã®å–å¾—
 	float x() const { return x_; }
 	float y() const { return y_; }
 	float z() const { return z_; }
 	float w() const { return w_; }
 
-	// ‰‰Zq‚Ì’è‹`
+	// æ¼”ç®—å­ã®å®šç¾©
 	quaternion operator * (float f) const;
 	quaternion operator / (float f) const;
 	vector3 operator * (const vector3& rhs) const;
 	quaternion operator * (const quaternion& rhs) const;
 
-	// •ÏŠ·
-	quaternion &identity();// ’PˆÊŒ³‚É‚·‚éi•Ô‚è’l‚Í©•ª©gj
-	quaternion &normalize();// ³‹K‰»‚·‚éi•Ô‚è’l‚Í©•ª©gj
+	// å¤‰æ›
+	quaternion &identity();// å˜ä½å…ƒã«ã™ã‚‹ï¼ˆè¿”ã‚Šå€¤ã¯è‡ªåˆ†è‡ªèº«ï¼‰
+	quaternion &normalize();// æ­£è¦åŒ–ã™ã‚‹ï¼ˆè¿”ã‚Šå€¤ã¯è‡ªåˆ†è‡ªèº«ï¼‰
 
-	// ¶¬
-	quaternion inverse() const; // ‹tŒ³‚ğ•Ô‚·
-	static quaternion slerp(const quaternion &q0, const quaternion &q1, float t);// ‹…–ÊüŒ`•âŠÔ
+	// ç”Ÿæˆ
+	quaternion inverse() const; // é€†å…ƒã‚’è¿”ã™
+	static quaternion slerp(const quaternion &q0, const quaternion &q1, float t);// çƒé¢ç·šå½¢è£œé–“
 };
 
 
