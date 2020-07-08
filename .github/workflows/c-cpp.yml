@@ -32,3 +32,5 @@ jobs:
 
     - name: VSTest
       run: vstest.console .\src\x64\Debug\UnitTest.dll
+      
+# this script is written based on https://github.com/Malcolmnixon/Setup-VSTest under the MIT license.
