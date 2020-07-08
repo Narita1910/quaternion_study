@@ -4,7 +4,7 @@ quaternionクラスを作成しました。
 ただし、主要部分の実装がされていません。
 実装して、ユニットテストが通るようにしてください。
 
-[![Actions Status](https://github.com/tpu-game/quaternion_study/workflows/c-cpp/badge.svg)](https://github.com/tpu-game/quaternion_study/actions)
+[![Actions Status](https://github.com/tpu-game/quaternion_study/workflows/MS%20testing%20framework/badge.svg)](https://github.com/tpu-game/quaternion_study/actions)
 （自分のリポジトリに合わせて編集してください）
 
 # 進め方
