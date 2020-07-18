@@ -1,0 +1,2 @@
+C:\Users\☆\Source\Repos\quaternion_study\src\x64\Debug\libquat.pdb
+C:\Users\☆\Source\Repos\quaternion_study\src\libquat\x64\Debug\libquat.pdb

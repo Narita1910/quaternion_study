@@ -2,15 +2,23 @@
 #include <cmath>
 #include "../include/libquat.h"
 
+
+
 // コンストラクタ
 quaternion::quaternion()
 {
-	// todo: 実装して下さい
+	quaternion::x_ = 0;
+	quaternion::y_ = 0;
+	quaternion::z_ = 0;
+	quaternion::w_ = 1;
 }
 
 quaternion::quaternion(float x, float y, float z, float w)
 {
-	// todo: 実装して下さい
+	quaternion::x_ = x;
+	quaternion::y_ = y;
+	quaternion::z_ = z;
+	quaternion::w_ = w;
 }
 
 quaternion::quaternion(const vector3 &v, float arg)
@@ -61,7 +69,12 @@ quaternion &quaternion::identity()
 // 正規化する
 quaternion &quaternion::normalize()
 {
-	// todo: 実装して下さい
+	float l;
+	l = sqrt(x_ * x_ + y_ * y_ + z_ * z_ + w_ * w_);
+	quaternion::x_ = x_/l;
+	quaternion::y_ = y_ / l;
+	quaternion::z_ = z_ / l;
+	quaternion::w_ = w_ / l;
 	return *this;
 }
 
